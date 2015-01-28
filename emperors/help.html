@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- add this to html tag above to enable offline:
+ manifest="cache.manifest"
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Latin Inscription Dater - Help</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="bootstrap.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="sticky-footer.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- Begin page content -->
+	<div class="container">
+		<p>There are a number of ways to date a particular inscription, but inscriptions that name emperors are among the easiest and, in some circumstances, the most precise. Each of the various titles and offices that an emperor assumed can be closely dated. Therefore, by examining one or more of these these titles, it is possible a particular range of dates of the given inscription, usually within a year and often an even narrower range.</p>
+		<p>The key to dating an inscription is the concept of <i>terminus post quem</i>. Rarely can an artefact be precisely dated. Usually we can only say that the artefact was deposited before a particular date (a <i>terminus ante quem</i>) or after a particular date (a <i>terminus post quem</i>). The dates generated with this tool are not necessarily the exact date of the inscription. Rather, they are the date after which the inscription must be dated (the <i>terminus post quem</i>). If we know, for example, that Augustus took on the title of <i>pater patriae</i> on January 1, 2 B.C., then we know that any inscription which contains the abbreviation <abbr class="initialism">PP</abbr> (<i>pater patriae</i>) must date to January 1, 2 B.C. or later. It obviously cannot have been erected before that date, but, because Augustus used this title from that point on, it could date to anytime after that.</p>
+		<p>One of the most useful titles you can use for dating an inscription is the record of the tribunician power (usually abbreviated <abbr class="initialism">TRIB POT</abbr> or <abbr class="initialism">TR P</abbr>). Following the precedent of Augustus, upon assuming the purple, emperors took on the power of the tribune (<i>tribunicia potestas</i>) and renewed it annually as a rule. In inscriptions, the renewal of this tribunician power is indicated by the Roman numeral that follows the <abbr class="initialism">TRIB POT</abbr>. Therefore, if an inscription says <abbr class="initialism">TRIB POT III</abbr>, we can be certain that the inscription dates somewhere between the beginning of the emperor’s third year and the beginning of his fourth year (here we actually have a <i>terminus ante quam</i> as well), based on the date they assumed the principate.</p>
+		<p>Consular years are also very useful for dating. Although emperors did change how consuls were chosen, they did not change the length of time the consul served or when they began their service from that of the Republican consulship. A consulship began on the first of the year and was given up on December 31 of that same year. Therefore the consular year also provides <i>terminus post quem</i> and a <i>terminus ante quem</i> for the inscription, just as the tribunician power does.</p>
+		<p>Other titles and honors are less precise. Imperatorships (<abbr class="initialism">IMP</abbr>) are only dateable to a particular year or span of years, the precise date that honor was bestowed is not recorded. Other titles were kept throughout the life of the emperor and therefore only provide us <i>termini post quem</i>.</p>
+		<p>In order to date a particular inscription, identify the latest <i>terminus post quem</i> to find the earliest possible date for an inscription and then find the earliest <i>terminus ante quem</i> (usually from consular years or tribunician powers) to find the latest possible date.</p>
+		<h4>Example</h4>
+		<p>Take a look at the following inscription dedicated to Nero:</p>
+		<img src="example-inscription.jpg" class="img-responsive img-thumbnail" style="margin-bottom: 10px">
+		<div class="well-sm well">
+		<p class="text-center">
+			NERONI &middot; CLAVDIO &middot; DIVI<br/>
+			CLAVDII &middot; F<br/>
+			GERMANICI &middot; CAISARIS &middot; N<br/>
+			TI &middot; CAISARIS &middot; AVG &middot; PRO &middot; N<br/>
+			DIVI &middot; AVGVSTI &middot; AB &middot; N<br/>
+			CAISARI AVG GERMANICO &middot; <b><span class="text-primary">PONT<br/>
+			MAX</span></b> &middot; <b><span class="text-success">TRIB POTEST &middot; II</span></b> &middot; <b><span class="text-warning">IMP</span></b> &middot; <b><span class="text-danger">COS</span></b><br/>
+			T V BICINES<br/>
+		</p>
+		</div>
+		<p>There are four dateable elements in this inscription:
+		<ul>
+			<li><span class="text-primary">Pont(ifex) Max(imus)</span>: assumed Oct. 13, A.D. 54</li>
+			<li><span class="text-success">Trib(unicia) Potest(as) II</span>: begun October 13, 55 and ended October 12, 56</li>
+			<li><span class="text-warning">Imp(erator)</span>: received AD 54</li>
+			<li><span class="text-danger">Co(n)s(ul)</span>: begun January 1, 55 and ended Dec. 31, 55</li>
+		</ul>
+		Based on these elements, we can date this inscription to between October 13 and Dec. 31, A.D. 55. In order to come to these dates, we first find the latest <i>terminus post quem</i>, which is provided by the tribunician power which was assumed on October 13, A.D. 55. The upper end is found by identifying the earliest <i>terminus ante quem</i>, which is provided by the consulship year.</p>
+		<p class="text-muted">Image Source: taken by the author at the Terme di Diocleziano in Rome, March 8, 2014.</p>
+	</div>
+
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
