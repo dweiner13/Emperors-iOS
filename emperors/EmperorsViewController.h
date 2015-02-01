@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController <UISearchResultsUpdating, UISearchBarDelegate>
+@class TitlesViewController;
+
+@interface EmperorsViewController : UITableViewController <UISearchResultsUpdating, UISearchBarDelegate>
 
 @property (copy, nonatomic) NSArray *emperorsOriginalSort;
 
@@ -16,5 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sortButton;
 @property (weak, nonatomic) IBOutlet UIToolbar *sortingToolbar;
+
+@property (strong, nonatomic) TitlesViewController *titlesViewController;
 
 @end

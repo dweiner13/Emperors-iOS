@@ -18,6 +18,8 @@
 #define HKSortControlYearIndex 0
 #define HKSortControlAlphaIndex 1
 
+#define HKDefaultsSortKey @"sortIndex"
+
 static NSString *nameCellIdentifier = @"nameCell";
 static NSString *titleCellIdentifier = @"titleCell";
 static NSString *wikiCellIdentifier = @"wikiCell";
@@ -28,8 +30,8 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
 @interface TitlesViewController ()
 
 @property (copy, nonatomic) NSArray *emperorOfficialNames;
-
 @property (nonatomic) NSArray *helpViewControllers;
+@property (nonatomic) SortCell *sortCell;
 
 @end
 
@@ -37,6 +39,17 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.sortCell = (SortCell *)[self tableView:self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:HKSortControlSection]];
+    
+    NSUInteger defaultSortIndex = [[NSUserDefaults standardUserDefaults] integerForKey:HKDefaultsSortKey];
+    self.sortByYear = (defaultSortIndex == HKSortControlYearIndex);
+    self.sortCell.sortControl.selectedSegmentIndex = defaultSortIndex;
+    
+    if (self.emperor==nil) {
+        UIView *defaultView = [[[NSBundle mainBundle] loadNibNamed:@"defaultTitlesView" owner:self options:nil] objectAtIndex:0];
+        self.view = defaultView;
+    }
     
     self.definesPresentationContext = YES;
     
@@ -49,8 +62,6 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
     UIBarButtonItem *helpBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"?" style:UIBarButtonItemStylePlain target:self action:@selector(helpButtonPressed:)];
     
     self.navigationItem.rightBarButtonItem = helpBarButtonItem;
-    
-    self.sortByYear = YES;
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"dates" ofType:@"json"];
     NSData *jsonData = [NSData dataWithContentsOfFile:path];
@@ -97,21 +108,35 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
 
 
 - (void)sortControlValueChanged:(UISegmentedControl *)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     if(sender.selectedSegmentIndex==HKSortControlYearIndex) {
         self.sortByYear = YES;
         
         [self.tableView beginUpdates];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:HKTitlesSection]
-                      withRowAnimation:UITableViewRowAnimationAutomatic];
+        for (int i =0; i < self.titlesSortedAlphabetically.count; i++) {
+            NSUInteger newRow = [self.titlesSortedByYear indexOfObject:self.titlesSortedAlphabetically[i]];
+            
+            [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:HKTitlesSection] toIndexPath:[NSIndexPath indexPathForRow:newRow inSection:HKTitlesSection]];
+            
+        }
         [self.tableView endUpdates];
+        
+        [defaults setInteger:HKSortControlYearIndex forKey:HKDefaultsSortKey];
     }
     else if(sender.selectedSegmentIndex==HKSortControlAlphaIndex) {
         self.sortByYear = NO;
         
         [self.tableView beginUpdates];
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:HKTitlesSection]
-                      withRowAnimation:UITableViewRowAnimationAutomatic];
+        for (int i =0; i < self.titlesSortedAlphabetically.count; i++) {
+            NSUInteger newRow = [self.titlesSortedAlphabetically indexOfObject:self.titlesSortedByYear[i]];
+            
+            [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:HKTitlesSection] toIndexPath:[NSIndexPath indexPathForRow:newRow inSection:HKTitlesSection]];
+            
+        }
         [self.tableView endUpdates];
+        
+        [defaults setInteger:HKSortControlAlphaIndex forKey:HKDefaultsSortKey];
     }
 }
 
@@ -122,7 +147,6 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 4;
 }
 
@@ -214,7 +238,7 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if(section==HKSortControlSection) {
+    if (section==HKSortControlSection) {
         return 1.0f;
     }
     return UITableViewAutomaticDimension;

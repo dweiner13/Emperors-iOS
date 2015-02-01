@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RootViewController.h"
+#import "EmperorsViewController.h"
 
 @interface EmperorResultsController : UITableViewController <UISearchResultsUpdating>
 
-@property (strong, nonatomic) RootViewController *RVC;
+@property (strong, nonatomic) EmperorsViewController *RVC;
 - (instancetype) initWithEmperors:(NSArray *)emperors;
 
 @end

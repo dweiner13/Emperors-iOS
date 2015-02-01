@@ -10,7 +10,7 @@
 		E0002FDA1A797CC3001C5453 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = E0002FD91A797CC3001C5453 /* help.html */; };
 		E0002FDE1A7980B7001C5453 /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = E0002FDD1A7980B7001C5453 /* bootstrap.css */; };
 		E0002FE01A79813B001C5453 /* example-inscription.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0002FDF1A79813B001C5453 /* example-inscription.jpg */; };
-		E01898861A631B6A00622CEB /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01898851A631B6A00622CEB /* RootViewController.m */; };
+		E01898861A631B6A00622CEB /* EmperorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01898851A631B6A00622CEB /* EmperorsViewController.m */; };
 		E01898881A631DD700622CEB /* emperors.json in Resources */ = {isa = PBXBuildFile; fileRef = E01898871A631DD700622CEB /* emperors.json */; };
 		E01C899F1A63152100946C7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E01C899E1A63152100946C7C /* main.m */; };
 		E01C89A21A63152100946C7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E01C89A11A63152100946C7C /* AppDelegate.m */; };
@@ -19,6 +19,7 @@
 		E01C89B91A63152100946C7C /* emperorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E01C89B81A63152100946C7C /* emperorsTests.m */; };
 		E0300CA01A64749F008D5548 /* TitlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0300C9F1A64749F008D5548 /* TitlesViewController.m */; };
 		E0300CBA1A64D8BF008D5548 /* dates.json in Resources */ = {isa = PBXBuildFile; fileRef = E0300CB91A64D8BF008D5548 /* dates.json */; };
+		E07360691A799ED500A3F651 /* defaultTitlesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07360681A799ED500A3F651 /* defaultTitlesView.xib */; };
 		E0750CF21A64681A00145B79 /* EmperorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0750CF11A64681A00145B79 /* EmperorCell.m */; };
 		E086DE151A7491B800BF7D59 /* TitlesHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E086DE141A7491B800BF7D59 /* TitlesHelpViewController.m */; };
 		E0B233B11A6979B500052C19 /* NameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B233B01A6979B500052C19 /* NameCell.m */; };
@@ -40,8 +41,8 @@
 		E0002FD91A797CC3001C5453 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		E0002FDD1A7980B7001C5453 /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = bootstrap.css; path = css/bootstrap.css; sourceTree = "<group>"; };
 		E0002FDF1A79813B001C5453 /* example-inscription.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "example-inscription.jpg"; sourceTree = "<group>"; };
-		E01898841A631B6A00622CEB /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		E01898851A631B6A00622CEB /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E01898841A631B6A00622CEB /* EmperorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmperorsViewController.h; sourceTree = "<group>"; };
+		E01898851A631B6A00622CEB /* EmperorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmperorsViewController.m; sourceTree = "<group>"; };
 		E01898871A631DD700622CEB /* emperors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emperors.json; sourceTree = "<group>"; };
 		E01C89991A63152100946C7C /* emperors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emperors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01C899D1A63152100946C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		E0300C9E1A64749F008D5548 /* TitlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlesViewController.h; sourceTree = "<group>"; };
 		E0300C9F1A64749F008D5548 /* TitlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlesViewController.m; sourceTree = "<group>"; };
 		E0300CB91A64D8BF008D5548 /* dates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dates.json; sourceTree = "<group>"; };
+		E07360681A799ED500A3F651 /* defaultTitlesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = defaultTitlesView.xib; sourceTree = "<group>"; };
 		E0750CF01A64681A00145B79 /* EmperorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmperorCell.h; sourceTree = "<group>"; };
 		E0750CF11A64681A00145B79 /* EmperorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmperorCell.m; sourceTree = "<group>"; };
 		E086DE131A7491B800BF7D59 /* TitlesHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlesHelpViewController.h; sourceTree = "<group>"; };
@@ -106,8 +108,8 @@
 		E01C899B1A63152100946C7C /* emperors */ = {
 			isa = PBXGroup;
 			children = (
-				E01898841A631B6A00622CEB /* RootViewController.h */,
-				E01898851A631B6A00622CEB /* RootViewController.m */,
+				E01898841A631B6A00622CEB /* EmperorsViewController.h */,
+				E01898851A631B6A00622CEB /* EmperorsViewController.m */,
 				E0300C9E1A64749F008D5548 /* TitlesViewController.h */,
 				E0300C9F1A64749F008D5548 /* TitlesViewController.m */,
 				E086DE131A7491B800BF7D59 /* TitlesHelpViewController.h */,
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				E0D8A1211A6C53DF00F9FECB /* Main.storyboard */,
+				E07360681A799ED500A3F651 /* defaultTitlesView.xib */,
 				E0B233B21A69982500052C19 /* SortCell.h */,
 				E0B233B31A69982500052C19 /* SortCell.m */,
 				E0750CF01A64681A00145B79 /* EmperorCell.h */,
@@ -254,6 +257,7 @@
 				E01898881A631DD700622CEB /* emperors.json in Resources */,
 				E01C89AA1A63152100946C7C /* Images.xcassets in Resources */,
 				E0300CBA1A64D8BF008D5548 /* dates.json in Resources */,
+				E07360691A799ED500A3F651 /* defaultTitlesView.xib in Resources */,
 				E0002FDE1A7980B7001C5453 /* bootstrap.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +281,7 @@
 				E086DE151A7491B800BF7D59 /* TitlesHelpViewController.m in Sources */,
 				E0B233B11A6979B500052C19 /* NameCell.m in Sources */,
 				E0B233B41A69982500052C19 /* SortCell.m in Sources */,
-				E01898861A631B6A00622CEB /* RootViewController.m in Sources */,
+				E01898861A631B6A00622CEB /* EmperorsViewController.m in Sources */,
 				E01C89A21A63152100946C7C /* AppDelegate.m in Sources */,
 				E01C899F1A63152100946C7C /* main.m in Sources */,
 			);
@@ -407,7 +411,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -419,7 +423,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Daniel Weiner. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "EmperorsViewController.h"
 #import "EmperorResultsController.h"
 #import "EmperorCell.h"
 #import "TitlesViewController.h"
@@ -19,14 +19,24 @@
 
 static NSString *cellIdentifier = @"EmperorNameCell";
 
-@interface RootViewController ()
+@interface EmperorsViewController ()
 
 @property (strong, nonatomic) UISearchController *searchController;
 @property (strong, nonatomic) NSMutableArray *filteredEmperors;
 
 @end
 
-@implementation RootViewController
+@implementation EmperorsViewController
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    // split view controller stuff
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.clearsSelectionOnViewWillAppear = NO;
+        self.preferredContentSize = CGSizeMake(320.0, 600.0);
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,6 +71,9 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     self.searchController.searchResultsUpdater = self;
     searchBar.searchBarStyle = UISearchBarStyleDefault;
     self.searchController.dimsBackgroundDuringPresentation = false;
+    
+    // split view controller stuff
+    self.titlesViewController = (TitlesViewController *) [[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,15 +116,15 @@ static NSString *cellIdentifier = @"EmperorNameCell";
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    TitlesViewController *titlesVC = segue.destinationViewController;
+    TitlesViewController *titlesVC = (TitlesViewController *)[segue.destinationViewController topViewController];
     
     NSDictionary *selectedEmperor = [(EmperorCell *)sender emperor];
     
     titlesVC.navigationItem.title = selectedEmperor[@"emperor_common_name"];
     
     titlesVC.emperor = selectedEmperor;
+    
+    [self.searchController.searchBar resignFirstResponder];
 }
 
 #pragma mark - UISearchResultsUpdating

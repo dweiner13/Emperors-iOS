@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "TitlesViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UISplitViewControllerDelegate>
 
 @end
 
@@ -19,6 +20,14 @@
     // Override point for customization after application launch.
     
     [self.window setTintColor: [UIColor colorWithRed:0.663 green:0.000 blue:0.025 alpha:1.000]];
+    
+    
+    // split view controller stuff
+    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+    splitViewController.delegate = self;
+    return YES;
     
     return YES;
 }
@@ -43,6 +52,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Split view
+
+- (BOOL) splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
+    NSLog(@"calling collapseSecondaryViewController");
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[TitlesViewController class]] && ([(TitlesViewController *)[(UINavigationController *)secondaryViewController topViewController] emperor] == nil)) {
+        // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 @end
