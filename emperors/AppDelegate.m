@@ -19,8 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    [self.window setTintColor: [UIColor colorWithRed:0.663 green:0.000 blue:0.025 alpha:1.000]];
-    
+    [self.window setTintColor: [UIColor colorWithRed:0.663 green:0.000 blue:0.000 alpha:1.000]];
     
     // split view controller stuff
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -57,13 +56,18 @@
 #pragma mark - Split view
 
 - (BOOL) splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    NSLog(@"calling collapseSecondaryViewController");
     if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[TitlesViewController class]] && ([(TitlesViewController *)[(UINavigationController *)secondaryViewController topViewController] emperor] == nil)) {
         // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
         return YES;
     } else {
         return NO;
     }
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation{
+    // Allows us to show split view even in portrait orientation on iPad
+    
+    return NO;
 }
 
 @end

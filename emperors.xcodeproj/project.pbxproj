@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		E0002FDA1A797CC3001C5453 /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = E0002FD91A797CC3001C5453 /* help.html */; };
-		E0002FDE1A7980B7001C5453 /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = E0002FDD1A7980B7001C5453 /* bootstrap.css */; };
 		E0002FE01A79813B001C5453 /* example-inscription.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0002FDF1A79813B001C5453 /* example-inscription.jpg */; };
+		E00A396F1A7EB0E400663C9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E00A396E1A7EB0E400663C9F /* Images.xcassets */; };
 		E01898861A631B6A00622CEB /* EmperorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01898851A631B6A00622CEB /* EmperorsViewController.m */; };
 		E01898881A631DD700622CEB /* emperors.json in Resources */ = {isa = PBXBuildFile; fileRef = E01898871A631DD700622CEB /* emperors.json */; };
 		E01C899F1A63152100946C7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E01C899E1A63152100946C7C /* main.m */; };
 		E01C89A21A63152100946C7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E01C89A11A63152100946C7C /* AppDelegate.m */; };
-		E01C89AA1A63152100946C7C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01C89A91A63152100946C7C /* Images.xcassets */; };
 		E01C89AD1A63152100946C7C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E01C89AB1A63152100946C7C /* LaunchScreen.xib */; };
 		E01C89B91A63152100946C7C /* emperorsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E01C89B81A63152100946C7C /* emperorsTests.m */; };
 		E0300CA01A64749F008D5548 /* TitlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0300C9F1A64749F008D5548 /* TitlesViewController.m */; };
 		E0300CBA1A64D8BF008D5548 /* dates.json in Resources */ = {isa = PBXBuildFile; fileRef = E0300CB91A64D8BF008D5548 /* dates.json */; };
-		E07360691A799ED500A3F651 /* defaultTitlesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07360681A799ED500A3F651 /* defaultTitlesView.xib */; };
+		E07360691A799ED500A3F651 /* DefaultTitlesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07360681A799ED500A3F651 /* DefaultTitlesView.xib */; };
 		E0750CF21A64681A00145B79 /* EmperorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0750CF11A64681A00145B79 /* EmperorCell.m */; };
-		E086DE151A7491B800BF7D59 /* TitlesHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E086DE141A7491B800BF7D59 /* TitlesHelpViewController.m */; };
+		E093FC811A7DE15300072A89 /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = E093FC801A7DE15300072A89 /* bootstrap.css */; };
+		E093FC861A7DEDC100072A89 /* ModalWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E093FC851A7DEDC100072A89 /* ModalWebViewController.m */; };
+		E093FC8A1A7DFB8200072A89 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = E093FC891A7DFB8200072A89 /* about.html */; };
+		E093FC8C1A7E13FC00072A89 /* ModalWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E093FC8B1A7E13FC00072A89 /* ModalWebView.xib */; };
 		E0B233B11A6979B500052C19 /* NameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B233B01A6979B500052C19 /* NameCell.m */; };
 		E0B233B41A69982500052C19 /* SortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B233B31A69982500052C19 /* SortCell.m */; };
 		E0D8A1231A6C53DF00F9FECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D8A1211A6C53DF00F9FECB /* Main.storyboard */; };
@@ -39,17 +41,16 @@
 
 /* Begin PBXFileReference section */
 		E0002FD91A797CC3001C5453 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
-		E0002FDD1A7980B7001C5453 /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = bootstrap.css; path = css/bootstrap.css; sourceTree = "<group>"; };
 		E0002FDF1A79813B001C5453 /* example-inscription.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "example-inscription.jpg"; sourceTree = "<group>"; };
+		E00A396E1A7EB0E400663C9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E01898841A631B6A00622CEB /* EmperorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmperorsViewController.h; sourceTree = "<group>"; };
 		E01898851A631B6A00622CEB /* EmperorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmperorsViewController.m; sourceTree = "<group>"; };
 		E01898871A631DD700622CEB /* emperors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emperors.json; sourceTree = "<group>"; };
-		E01C89991A63152100946C7C /* emperors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = emperors.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E01C89991A63152100946C7C /* Emperors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emperors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01C899D1A63152100946C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01C899E1A63152100946C7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E01C89A01A63152100946C7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E01C89A11A63152100946C7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E01C89A91A63152100946C7C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E01C89AC1A63152100946C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E01C89B21A63152100946C7C /* emperorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = emperorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01C89B71A63152100946C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,11 +58,14 @@
 		E0300C9E1A64749F008D5548 /* TitlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlesViewController.h; sourceTree = "<group>"; };
 		E0300C9F1A64749F008D5548 /* TitlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlesViewController.m; sourceTree = "<group>"; };
 		E0300CB91A64D8BF008D5548 /* dates.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dates.json; sourceTree = "<group>"; };
-		E07360681A799ED500A3F651 /* defaultTitlesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = defaultTitlesView.xib; sourceTree = "<group>"; };
+		E07360681A799ED500A3F651 /* DefaultTitlesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultTitlesView.xib; sourceTree = "<group>"; };
 		E0750CF01A64681A00145B79 /* EmperorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmperorCell.h; sourceTree = "<group>"; };
 		E0750CF11A64681A00145B79 /* EmperorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmperorCell.m; sourceTree = "<group>"; };
-		E086DE131A7491B800BF7D59 /* TitlesHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitlesHelpViewController.h; sourceTree = "<group>"; };
-		E086DE141A7491B800BF7D59 /* TitlesHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitlesHelpViewController.m; sourceTree = "<group>"; };
+		E093FC801A7DE15300072A89 /* bootstrap.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.css; sourceTree = "<group>"; };
+		E093FC841A7DEDC100072A89 /* ModalWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalWebViewController.h; sourceTree = "<group>"; };
+		E093FC851A7DEDC100072A89 /* ModalWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalWebViewController.m; sourceTree = "<group>"; };
+		E093FC891A7DFB8200072A89 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		E093FC8B1A7E13FC00072A89 /* ModalWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalWebView.xib; sourceTree = "<group>"; };
 		E0B233AF1A6979B500052C19 /* NameCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameCell.h; sourceTree = "<group>"; };
 		E0B233B01A6979B500052C19 /* NameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameCell.m; sourceTree = "<group>"; };
 		E0B233B21A69982500052C19 /* SortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortCell.h; sourceTree = "<group>"; };
@@ -95,11 +99,12 @@
 				E01C899A1A63152100946C7C /* Products */,
 			);
 			sourceTree = "<group>";
+			wrapsLines = 1;
 		};
 		E01C899A1A63152100946C7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E01C89991A63152100946C7C /* emperors.app */,
+				E01C89991A63152100946C7C /* Emperors.app */,
 				E01C89B21A63152100946C7C /* emperorsTests.xctest */,
 			);
 			name = Products;
@@ -112,11 +117,11 @@
 				E01898851A631B6A00622CEB /* EmperorsViewController.m */,
 				E0300C9E1A64749F008D5548 /* TitlesViewController.h */,
 				E0300C9F1A64749F008D5548 /* TitlesViewController.m */,
-				E086DE131A7491B800BF7D59 /* TitlesHelpViewController.h */,
-				E086DE141A7491B800BF7D59 /* TitlesHelpViewController.m */,
 				E0750CEF1A64652000145B79 /* Interface Files */,
 				E01C899C1A63152100946C7C /* Supporting Files */,
-				E01C89A91A63152100946C7C /* Images.xcassets */,
+				E00A396E1A7EB0E400663C9F /* Images.xcassets */,
+				E093FC841A7DEDC100072A89 /* ModalWebViewController.h */,
+				E093FC851A7DEDC100072A89 /* ModalWebViewController.m */,
 				E01C89A01A63152100946C7C /* AppDelegate.h */,
 				E01C89A11A63152100946C7C /* AppDelegate.m */,
 			);
@@ -126,13 +131,14 @@
 		E01C899C1A63152100946C7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E093FC801A7DE15300072A89 /* bootstrap.css */,
 				E0002FDF1A79813B001C5453 /* example-inscription.jpg */,
-				E0002FDD1A7980B7001C5453 /* bootstrap.css */,
 				E0002FD91A797CC3001C5453 /* help.html */,
 				E0300CB91A64D8BF008D5548 /* dates.json */,
 				E01898871A631DD700622CEB /* emperors.json */,
 				E01C899D1A63152100946C7C /* Info.plist */,
 				E01C899E1A63152100946C7C /* main.m */,
+				E093FC891A7DFB8200072A89 /* about.html */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -157,8 +163,9 @@
 		E0750CEF1A64652000145B79 /* Interface Files */ = {
 			isa = PBXGroup;
 			children = (
+				E093FC8B1A7E13FC00072A89 /* ModalWebView.xib */,
 				E0D8A1211A6C53DF00F9FECB /* Main.storyboard */,
-				E07360681A799ED500A3F651 /* defaultTitlesView.xib */,
+				E07360681A799ED500A3F651 /* DefaultTitlesView.xib */,
 				E0B233B21A69982500052C19 /* SortCell.h */,
 				E0B233B31A69982500052C19 /* SortCell.m */,
 				E0750CF01A64681A00145B79 /* EmperorCell.h */,
@@ -173,21 +180,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E01C89981A63152100946C7C /* emperors */ = {
+		E01C89981A63152100946C7C /* Emperors */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E01C89BC1A63152100946C7C /* Build configuration list for PBXNativeTarget "emperors" */;
+			buildConfigurationList = E01C89BC1A63152100946C7C /* Build configuration list for PBXNativeTarget "Emperors" */;
 			buildPhases = (
 				E01C89951A63152100946C7C /* Sources */,
 				E01C89961A63152100946C7C /* Frameworks */,
+				E09F265C1A96602200234624 /* ShellScript */,
 				E01C89971A63152100946C7C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = emperors;
+			name = Emperors;
 			productName = emperors;
-			productReference = E01C89991A63152100946C7C /* emperors.app */;
+			productReference = E01C89991A63152100946C7C /* Emperors.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E01C89B11A63152100946C7C /* emperorsTests */ = {
@@ -219,6 +227,7 @@
 				TargetAttributes = {
 					E01C89981A63152100946C7C = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 5TSNJUMDQY;
 					};
 					E01C89B11A63152100946C7C = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -239,7 +248,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E01C89981A63152100946C7C /* emperors */,
+				E01C89981A63152100946C7C /* Emperors */,
 				E01C89B11A63152100946C7C /* emperorsTests */,
 			);
 		};
@@ -252,13 +261,15 @@
 			files = (
 				E01C89AD1A63152100946C7C /* LaunchScreen.xib in Resources */,
 				E0002FE01A79813B001C5453 /* example-inscription.jpg in Resources */,
+				E093FC8C1A7E13FC00072A89 /* ModalWebView.xib in Resources */,
 				E0002FDA1A797CC3001C5453 /* help.html in Resources */,
+				E00A396F1A7EB0E400663C9F /* Images.xcassets in Resources */,
 				E0D8A1231A6C53DF00F9FECB /* Main.storyboard in Resources */,
 				E01898881A631DD700622CEB /* emperors.json in Resources */,
-				E01C89AA1A63152100946C7C /* Images.xcassets in Resources */,
 				E0300CBA1A64D8BF008D5548 /* dates.json in Resources */,
-				E07360691A799ED500A3F651 /* defaultTitlesView.xib in Resources */,
-				E0002FDE1A7980B7001C5453 /* bootstrap.css in Resources */,
+				E093FC8A1A7DFB8200072A89 /* about.html in Resources */,
+				E093FC811A7DE15300072A89 /* bootstrap.css in Resources */,
+				E07360691A799ED500A3F651 /* DefaultTitlesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +282,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E09F265C1A96602200234624 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E01C89951A63152100946C7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -278,9 +305,9 @@
 			files = (
 				E0750CF21A64681A00145B79 /* EmperorCell.m in Sources */,
 				E0300CA01A64749F008D5548 /* TitlesViewController.m in Sources */,
-				E086DE151A7491B800BF7D59 /* TitlesHelpViewController.m in Sources */,
 				E0B233B11A6979B500052C19 /* NameCell.m in Sources */,
 				E0B233B41A69982500052C19 /* SortCell.m in Sources */,
+				E093FC861A7DEDC100072A89 /* ModalWebViewController.m in Sources */,
 				E01898861A631B6A00622CEB /* EmperorsViewController.m in Sources */,
 				E01C89A21A63152100946C7C /* AppDelegate.m in Sources */,
 				E01C899F1A63152100946C7C /* main.m in Sources */,
@@ -300,7 +327,7 @@
 /* Begin PBXTargetDependency section */
 		E01C89B41A63152100946C7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E01C89981A63152100946C7C /* emperors */;
+			target = E01C89981A63152100946C7C /* Emperors */;
 			targetProxy = E01C89B31A63152100946C7C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -407,10 +434,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = emperors/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Emperors;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -419,10 +449,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = emperors/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Emperors;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -441,7 +474,7 @@
 				);
 				INFOPLIST_FILE = emperorsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = emperorsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emperors.app/emperors";
 			};
 			name = Debug;
@@ -456,7 +489,7 @@
 				);
 				INFOPLIST_FILE = emperorsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = emperorsTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emperors.app/emperors";
 			};
 			name = Release;
@@ -473,7 +506,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E01C89BC1A63152100946C7C /* Build configuration list for PBXNativeTarget "emperors" */ = {
+		E01C89BC1A63152100946C7C /* Build configuration list for PBXNativeTarget "Emperors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E01C89BD1A63152100946C7C /* Debug */,

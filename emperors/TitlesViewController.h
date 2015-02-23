@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TitlesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIPageViewControllerDataSource>
+@interface TitlesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (copy, nonatomic) NSDictionary *emperor;
 @property (copy, nonatomic) NSArray *titlesSortedByYear;
@@ -18,5 +18,6 @@
 
 - (IBAction)sortControlValueChanged:(UISegmentedControl *)sender;
 - (void)helpButtonPressed:(UIBarButtonItem *)helpButton;
+- (void)sortButtonPressed:(UIBarButtonItem *)sortButton;
 
 @end

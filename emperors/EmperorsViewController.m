@@ -10,6 +10,7 @@
 #import "EmperorResultsController.h"
 #import "EmperorCell.h"
 #import "TitlesViewController.h"
+#import "ModalWebViewController.h"
 
 #define HKCommonNameSort 0
 #define HKDateSort 1
@@ -70,7 +71,7 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     self.tableView.tableHeaderView = searchBar;
     self.searchController.searchResultsUpdater = self;
     searchBar.searchBarStyle = UISearchBarStyleDefault;
-    self.searchController.dimsBackgroundDuringPresentation = false;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
     
     // split view controller stuff
     self.titlesViewController = (TitlesViewController *) [[self.splitViewController.viewControllers lastObject] topViewController];
@@ -113,6 +114,17 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     return cell;
 }
 
+- (IBAction)aboutButtonPressed:(UIBarButtonItem *)sender {
+    ModalWebViewController *aboutViewController = [[ModalWebViewController alloc] initWithHTMLFileName:@"about"
+                                                                                                 title:@"About"
+                                                                                modalPresentationStyle:UIModalPresentationFormSheet];
+    
+    aboutViewController.allowScrolling = NO;
+    
+    [self presentViewController:aboutViewController animated:YES completion:nil];
+}
+
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -124,6 +136,7 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     
     titlesVC.emperor = selectedEmperor;
     
+    // dismiss keyboard when an emperor is tapped (wouldn't otherwise dismiss with SplitViewController)
     [self.searchController.searchBar resignFirstResponder];
 }
 
@@ -142,7 +155,8 @@ static NSString *cellIdentifier = @"EmperorNameCell";
                 return range.location != NSNotFound;
             }
             else {
-                NSRange range = [emperor[@"emperor_inscription_name"] rangeOfString:searchString options:NSCaseInsensitiveSearch];
+                NSString *uReplacedByV = [searchString stringByReplacingOccurrencesOfString:@"u" withString:@"v" options:NSCaseInsensitiveSearch range:NSMakeRange(0, searchString.length)];
+                NSRange range = [emperor[@"emperor_inscription_name"] rangeOfString:uReplacedByV options:NSCaseInsensitiveSearch];
                 return range.location != NSNotFound;
             }
         }];
@@ -159,6 +173,20 @@ static NSString *cellIdentifier = @"EmperorNameCell";
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
     [self updateSearchResultsForSearchController:self.searchController];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    if(!self.searchController.isActive) {
+        UIEdgeInsets insets = self.tableView.scrollIndicatorInsets;
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(insets.top + 88, insets.left, insets.bottom, insets.right);
+    }
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    if(self.searchController.isActive) {
+        UIEdgeInsets insets = self.tableView.scrollIndicatorInsets;
+        self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(64, insets.left, insets.bottom, insets.right);
+    }
 }
 
 @end

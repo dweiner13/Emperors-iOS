@@ -9,6 +9,7 @@
 #import "TitlesViewController.h"
 #import "NameCell.h"
 #import "SortCell.h"
+#import "ModalWebViewController.h"
 
 #define HKSortControlSection 0
 #define HKNamesSection 1
@@ -18,7 +19,7 @@
 #define HKSortControlYearIndex 0
 #define HKSortControlAlphaIndex 1
 
-#define HKDefaultsSortKey @"sortIndex"
+static NSString *defaultsSortIndexKey = @"sortIndex";
 
 static NSString *nameCellIdentifier = @"nameCell";
 static NSString *titleCellIdentifier = @"titleCell";
@@ -26,6 +27,8 @@ static NSString *wikiCellIdentifier = @"wikiCell";
 static NSString *sortCellIdentifier = @"sortCell";
 
 static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
+
+static NSInteger estimatedRowHeight = 44.0;
 
 @interface TitlesViewController ()
 
@@ -42,25 +45,30 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
     
     self.sortCell = (SortCell *)[self tableView:self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:HKSortControlSection]];
     
-    NSUInteger defaultSortIndex = [[NSUserDefaults standardUserDefaults] integerForKey:HKDefaultsSortKey];
+    NSUInteger defaultSortIndex = [[NSUserDefaults standardUserDefaults] integerForKey:defaultsSortIndexKey];
     self.sortByYear = (defaultSortIndex == HKSortControlYearIndex);
     self.sortCell.sortControl.selectedSegmentIndex = defaultSortIndex;
     
     if (self.emperor==nil) {
-        UIView *defaultView = [[[NSBundle mainBundle] loadNibNamed:@"defaultTitlesView" owner:self options:nil] objectAtIndex:0];
+        UIView *defaultView = [[[NSBundle mainBundle] loadNibNamed:@"DefaultTitlesView"
+                                                             owner:self
+                                                           options:nil]
+                               objectAtIndex:0];
         self.view = defaultView;
     }
     
     self.definesPresentationContext = YES;
     
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 44.0; // set to whatever your "average" cell height is
+    self.tableView.estimatedRowHeight = estimatedRowHeight; // set to whatever your "average" cell height is
     
     // to compensate for the 1.0f header height for the first section (with sort control)
     self.tableView.contentInset = UIEdgeInsetsMake(-1.0f, 0.0f, 0.0f, 0.0);
     
-    UIBarButtonItem *helpBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"?" style:UIBarButtonItemStylePlain target:self action:@selector(helpButtonPressed:)];
-    
+    UIBarButtonItem *helpBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Help"
+                                                                          style:UIBarButtonItemStylePlain
+                                                                         target:self
+                                                                         action:@selector(helpButtonPressed:)];
     self.navigationItem.rightBarButtonItem = helpBarButtonItem;
 
     NSString *path = [[NSBundle mainBundle] pathForResource:@"dates" ofType:@"json"];
@@ -106,7 +114,6 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
     self.emperorOfficialNames = [(NSString *)self.emperor[@"emperor_inscription_name"] componentsSeparatedByString:@", "];
 }
 
-
 - (void)sortControlValueChanged:(UISegmentedControl *)sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
@@ -122,7 +129,7 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
         }
         [self.tableView endUpdates];
         
-        [defaults setInteger:HKSortControlYearIndex forKey:HKDefaultsSortKey];
+        [defaults setInteger:HKSortControlYearIndex forKey:defaultsSortIndexKey];
     }
     else if(sender.selectedSegmentIndex==HKSortControlAlphaIndex) {
         self.sortByYear = NO;
@@ -136,12 +143,30 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
         }
         [self.tableView endUpdates];
         
-        [defaults setInteger:HKSortControlAlphaIndex forKey:HKDefaultsSortKey];
+        [defaults setInteger:HKSortControlAlphaIndex forKey:defaultsSortIndexKey];
     }
 }
 
 - (void)helpButtonPressed:(UIBarButtonItem *)helpButton {
-    [self performSegueWithIdentifier:titlesViewHelpSegueIdentifier sender:helpButton];
+    ModalWebViewController *helpViewController = [[ModalWebViewController alloc] initWithHTMLFileName:@"help"
+                                                                                                title:@"Help"
+                                                                               modalPresentationStyle:UIModalPresentationPageSheet];
+    
+    [self presentViewController:helpViewController animated:YES completion:nil];
+}
+
+-(void)sortButtonPressed:(UIBarButtonItem *)sortButton {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                                                   message:@"This is an alert."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
@@ -253,40 +278,6 @@ static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
         
         [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
     }
-}
-
-#pragma mark - Page View Data Source
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController {
-    NSInteger VCindex = [self.helpViewControllers indexOfObject:viewController];
-    
-    if(VCindex!=NSNotFound && VCindex!=(self.helpViewControllers.count - 1)) {
-        return self.helpViewControllers[VCindex + 1];
-    }
-    else {
-        return nil;
-    }
-}
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController {
-    NSInteger VCindex = [self.helpViewControllers indexOfObject:pageViewController];
-    
-    if(VCindex!=NSNotFound && VCindex!=0) {
-        return self.helpViewControllers[VCindex - 1];
-    }
-    else {
-        return nil;
-    }
-}
-
-- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController {
-    return [self.helpViewControllers count];
-}
-
-- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController {
-    NSInteger VCindex = [self.helpViewControllers indexOfObject:pageViewController.viewControllers[0]];
-    
-    return VCindex;
 }
 
 @end
