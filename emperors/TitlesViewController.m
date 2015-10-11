@@ -355,7 +355,11 @@ static NSInteger estimatedRowHeight = 44.0;
 - (void)showShareSheetWithSourceRect:(CGRect)rect {
     EmperorShareProvider *shareProvider = [[EmperorShareProvider alloc] initWithPlaceholderString:[self getPlaintext] mailHTMLString:[self getHTML]];
     
+    NSString *subject = [NSString stringWithFormat:@"Titles for Emperor %@", self.emperor[@"emperor_common_name"]];
+    
     UIActivityViewController* activityController = [[UIActivityViewController alloc] initWithActivityItems:@[shareProvider] applicationActivities:nil];
+    
+    [activityController setValue:subject forKey:@"subject"];
     
     activityController.popoverPresentationController.sourceRect = rect;
     
