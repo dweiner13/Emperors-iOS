@@ -10,6 +10,7 @@
 #import "NameCell.h"
 #import "SortCell.h"
 #import "ModalWebViewController.h"
+#import "emperors-Swift.h"
 
 #define HKSortControlSection 0
 #define HKNamesSection 1
@@ -276,7 +277,11 @@ static NSInteger estimatedRowHeight = 44.0;
 
 - (NSString *)getPlaintext {
     NSArray *titles;
-    NSString *plaintext = @"";
+    NSString *plaintext = [NSString stringWithFormat:@"%@\n", self.emperor[@"emperor_common_name"]];
+    for (NSString *officialName in self.emperorOfficialNames) {
+        NSString *line = [NSString stringWithFormat:@"%@\n", officialName];
+        plaintext = [plaintext stringByAppendingString:line];
+    }
     if (self.sortByYear) {
         titles = self.titlesSortedByYear;
     }
@@ -335,14 +340,20 @@ static NSInteger estimatedRowHeight = 44.0;
             [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
         }
         else {
-            UIActivityViewController* activityController = [[UIActivityViewController alloc] initWithActivityItems:@[[self getHTML]] applicationActivities:nil];
-            
-            activityController.popoverPresentationController.sourceRect = [self.tableView rectForRowAtIndexPath:indexPath];
-            
-            [self presentViewController:activityController animated:YES completion:nil];
-//            [self showViewController:activityController sender:self];
+            [self showShareSheetWithSourceRect:[self.tableView rectForRowAtIndexPath:indexPath]];
         }
     }
+}
+
+- (void)showShareSheetWithSourceRect:(CGRect)rect {
+    EmperorShareProvider *shareProvider = [[EmperorShareProvider alloc] initWithPlaceholderString:[self getPlaintext] mailHTMLString:[self getHTML]];
+    
+    UIActivityViewController* activityController = [[UIActivityViewController alloc] initWithActivityItems:@[shareProvider] applicationActivities:nil];
+    
+    activityController.popoverPresentationController.sourceRect = rect;
+    
+    [self presentViewController:activityController animated:YES completion:nil];
+    
 }
 
 @end

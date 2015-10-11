@@ -26,6 +26,7 @@
 		E093FC8C1A7E13FC00072A89 /* ModalWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E093FC8B1A7E13FC00072A89 /* ModalWebView.xib */; };
 		E0B233B11A6979B500052C19 /* NameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B233B01A6979B500052C19 /* NameCell.m */; };
 		E0B233B41A69982500052C19 /* SortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B233B31A69982500052C19 /* SortCell.m */; };
+		E0D59EAE1BCB122A00282DEA /* EmperorShareProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */; settings = {ASSET_TAGS = (); }; };
 		E0D8A1231A6C53DF00F9FECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D8A1211A6C53DF00F9FECB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,8 @@
 		E0B233B01A6979B500052C19 /* NameCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameCell.m; sourceTree = "<group>"; };
 		E0B233B21A69982500052C19 /* SortCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortCell.h; sourceTree = "<group>"; };
 		E0B233B31A69982500052C19 /* SortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortCell.m; sourceTree = "<group>"; };
+		E0D59EAC1BCB122A00282DEA /* Emperors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emperors-Bridging-Header.h"; sourceTree = "<group>"; };
+		E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmperorShareProvider.swift; sourceTree = "<group>"; };
 		E0D8A1221A6C53DF00F9FECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +120,7 @@
 				E01898851A631B6A00622CEB /* EmperorsViewController.m */,
 				E0300C9E1A64749F008D5548 /* TitlesViewController.h */,
 				E0300C9F1A64749F008D5548 /* TitlesViewController.m */,
+				E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */,
 				E0750CEF1A64652000145B79 /* Interface Files */,
 				E01C899C1A63152100946C7C /* Supporting Files */,
 				E00A396E1A7EB0E400663C9F /* Images.xcassets */,
@@ -124,6 +128,7 @@
 				E093FC851A7DEDC100072A89 /* ModalWebViewController.m */,
 				E01C89A01A63152100946C7C /* AppDelegate.h */,
 				E01C89A11A63152100946C7C /* AppDelegate.m */,
+				E0D59EAC1BCB122A00282DEA /* Emperors-Bridging-Header.h */,
 			);
 			path = emperors;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 		E01C89911A63152100946C7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Daniel Weiner";
 				TargetAttributes = {
@@ -311,6 +317,7 @@
 				E01898861A631B6A00622CEB /* EmperorsViewController.m in Sources */,
 				E01C89A21A63152100946C7C /* AppDelegate.m in Sources */,
 				E01C899F1A63152100946C7C /* main.m in Sources */,
+				E0D59EAE1BCB122A00282DEA /* EmperorShareProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = emperors/Info.plist;
@@ -441,6 +449,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Emperors;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "emperors/Emperors-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -449,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = emperors/Info.plist;
@@ -456,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Emperors;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "emperors/Emperors-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
