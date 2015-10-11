@@ -54,6 +54,11 @@ static NSInteger estimatedRowHeight = 44.0;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (self.splitViewController != nil) {
+        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        self.navigationItem.leftItemsSupplementBackButton = YES;
+    }
+    
     self.sortCell = (SortCell *)[self tableView:self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:HKSortControlSection]];
     
     NSUInteger defaultSortIndex = [[NSUserDefaults standardUserDefaults] integerForKey:defaultsSortIndexKey];

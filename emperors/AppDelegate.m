@@ -26,6 +26,7 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
+    splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
     return YES;
     
     return YES;
@@ -62,12 +63,6 @@
     } else {
         return NO;
     }
-}
-
-- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation{
-    // Allows us to show split view even in portrait orientation on iPad
-    
-    return NO;
 }
 
 @end
