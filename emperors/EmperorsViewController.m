@@ -39,6 +39,12 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     }
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    if (self.tableView.indexPathForSelectedRow != nil) {
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

@@ -45,6 +45,12 @@ static NSInteger estimatedRowHeight = 44.0;
 
 @implementation TitlesViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    if (self.tableView.indexPathForSelectedRow != nil) {
+        [self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -343,6 +349,7 @@ static NSInteger estimatedRowHeight = 44.0;
             [self showShareSheetWithSourceRect:[self.tableView rectForRowAtIndexPath:indexPath]];
         }
     }
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)showShareSheetWithSourceRect:(CGRect)rect {
