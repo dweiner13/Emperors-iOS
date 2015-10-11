@@ -14,10 +14,13 @@
 #define HKSortControlSection 0
 #define HKNamesSection 1
 #define HKTitlesSection 2
-#define HKWikiSection 3
+#define HKActionSection 3
 
 #define HKSortControlYearIndex 0
 #define HKSortControlAlphaIndex 1
+
+#define HKWikiRow 0
+#define HKShareRow 1
 
 static NSString *defaultsSortIndexKey = @"sortIndex";
 
@@ -25,6 +28,7 @@ static NSString *nameCellIdentifier = @"nameCell";
 static NSString *titleCellIdentifier = @"titleCell";
 static NSString *wikiCellIdentifier = @"wikiCell";
 static NSString *sortCellIdentifier = @"sortCell";
+static NSString *shareCellIdentifier = @"shareCell";
 
 static NSString *titlesViewHelpSegueIdentifier = @"TitlesViewHelpSegue";
 
@@ -203,8 +207,8 @@ static NSInteger estimatedRowHeight = 44.0;
             break;
         case HKTitlesSection:
             return [self.titlesSortedByYear count];
-        case HKWikiSection:
-            return 1;
+        case HKActionSection:
+            return 2;
         default:
             return 0;
     }
@@ -219,7 +223,6 @@ static NSInteger estimatedRowHeight = 44.0;
             cell.sortControl.selectedSegmentIndex = self.sortByYear ? HKSortControlYearIndex : HKSortControlAlphaIndex;
             
             return cell;
-            break;
         }
         case HKNamesSection:
         {
@@ -228,37 +231,39 @@ static NSInteger estimatedRowHeight = 44.0;
             cell.mainLabel.text = self.emperorOfficialNames[indexPath.row];
             
             return cell;
-            break;
         }
         case HKTitlesSection:
         {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:titleCellIdentifier forIndexPath:indexPath];
             
-            if (!self.sortByYear) {
-                cell.textLabel.text = self.titlesSortedAlphabetically[indexPath.row][@"title"];
-                cell.detailTextLabel.text = self.titlesSortedAlphabetically[indexPath.row][@"date"];
-            }
-            else {
-                
+            if (self.sortByYear) {
                 cell.textLabel.text = self.titlesSortedByYear[indexPath.row][@"title"];
                 cell.detailTextLabel.text = self.titlesSortedByYear[indexPath.row][@"date"];
             }
+            else {
+                cell.textLabel.text = self.titlesSortedAlphabetically[indexPath.row][@"title"];
+                cell.detailTextLabel.text = self.titlesSortedAlphabetically[indexPath.row][@"date"];
+            }
             
             return cell;
-            break;
         }
-        case HKWikiSection:
+        case HKActionSection:
         {
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:wikiCellIdentifier forIndexPath:indexPath];
-            
-            cell.textLabel.text = [NSString stringWithFormat: @"%@ at Wikipedia", self.emperor[@"emperor_common_name"]];
-            
-            return cell;
-            break;
+            if (indexPath.row == HKWikiRow) {
+                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:wikiCellIdentifier forIndexPath:indexPath];
+                
+                cell.textLabel.text = [NSString stringWithFormat: @"%@ at Wikipedia", self.emperor[@"emperor_common_name"]];
+                
+                return cell;
+            }
+            else {
+                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shareCellIdentifier forIndexPath:indexPath];
+                
+                return cell;
+            }
         }
         default:
             return nil;
-            break;
     }
 }
 
@@ -269,14 +274,74 @@ static NSInteger estimatedRowHeight = 44.0;
     return UITableViewAutomaticDimension;
 }
 
+- (NSString *)getPlaintext {
+    NSArray *titles;
+    NSString *plaintext = @"";
+    if (self.sortByYear) {
+        titles = self.titlesSortedByYear;
+    }
+    else {
+        titles = self.titlesSortedAlphabetically;
+    }
+    for (NSDictionary *titleDict in titles) {
+        NSString *title = titleDict[@"title"];
+        NSString *date = titleDict[@"date"];
+        
+        NSString *line = [NSString stringWithFormat:@"%@: %@\n", title, date];
+        
+        plaintext = [plaintext stringByAppendingString:line];
+    }
+    
+    return plaintext;
+}
+
+- (NSString *)getHTML {
+    NSArray *titles;
+    NSString *HTML = [NSString stringWithFormat:@"<html><body><br /><br /><p style=\"text-align: center; font-size: 120%%; margin-top: 0px; margin-bottom: 3px;\"><b>%@</b></p>", self.emperor[@"emperor_common_name"]];
+    
+    for (NSString *officialName in self.emperorOfficialNames) {
+        NSString *line = [NSString stringWithFormat:@"<p style=\"text-align: center; margin-top: 0px; margin-bottom: 3px; font-family: Academy Engraved LET\">%@</p>", officialName];
+        HTML = [HTML stringByAppendingString:line];
+    }
+    
+    HTML = [HTML stringByAppendingString:@"<table>"];
+    
+    if (self.sortByYear) {
+        titles = self.titlesSortedByYear;
+    }
+    else {
+        titles = self.titlesSortedAlphabetically;
+    }
+    for (NSDictionary *titleDict in titles) {
+        NSString *title = titleDict[@"title"];
+        NSString *date = titleDict[@"date"];
+        
+        NSString *line = [NSString stringWithFormat:@"<tr><td><b>%@</b></td><td>%@</td></tr>", title, date];
+        
+        HTML = [HTML stringByAppendingString:line];
+    }
+    
+    return [HTML stringByAppendingString:@"</table><p>Sent from <a href=\"https://itunes.apple.com/us/app/emperors/id969178209?mt=8\">Emperors</a></p></body></html>"];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section==HKWikiSection) {
-        // get the wiki_url for an arbitrary title in the array
-        NSURL *wikiUrl = [NSURL URLWithString:self.titlesSortedByYear[0][@"wiki_url"]];
-        
-        [[UIApplication sharedApplication] openURL:wikiUrl];
-        
-        [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+    if (indexPath.section == HKActionSection) {
+        if (indexPath.row == HKWikiRow) {
+            // get the wiki_url for an arbitrary title in the array
+            NSURL *wikiUrl = [NSURL URLWithString:self.titlesSortedByYear[0][@"wiki_url"]];
+            
+            [[UIApplication sharedApplication] openURL:wikiUrl];
+            
+            [tableView deselectRowAtIndexPath:[tableView indexPathForSelectedRow] animated:NO];
+        }
+        else {
+            UIActivityViewController* activityController = [[UIActivityViewController alloc] initWithActivityItems:@[[self getHTML]] applicationActivities:nil];
+            
+            activityController.popoverPresentationController.sourceRect = [self.tableView rectForRowAtIndexPath:indexPath];
+            
+            [self presentViewController:activityController animated:YES completion:nil];
+//            [self showViewController:activityController sender:self];
+        }
     }
 }
 

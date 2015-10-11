@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TitlesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TitlesViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UIActivityItemSource>
 
 @property (copy, nonatomic) NSDictionary *emperor;
 @property (copy, nonatomic) NSArray *titlesSortedByYear;

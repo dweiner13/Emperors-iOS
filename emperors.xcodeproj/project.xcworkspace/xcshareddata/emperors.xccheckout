@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3335932D-6560-4C48-BE9E-8CF2930E411F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>emperors</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3793DE2713085A5624BE36981D2811A0C3830DED</key>
+		<string>https://github.com/danw13335/emperors.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>emperors.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3793DE2713085A5624BE36981D2811A0C3830DED</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/danw13335/emperors.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3793DE2713085A5624BE36981D2811A0C3830DED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3793DE2713085A5624BE36981D2811A0C3830DED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Emperors%20iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
