@@ -361,10 +361,10 @@ static NSInteger estimatedRowHeight = 44.0;
     
     [activityController setValue:subject forKey:@"subject"];
     
+    activityController.popoverPresentationController.sourceView = self.tableView;
     activityController.popoverPresentationController.sourceRect = rect;
     
     [self presentViewController:activityController animated:YES completion:nil];
-    
 }
 
 @end
