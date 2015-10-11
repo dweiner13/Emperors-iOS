@@ -166,20 +166,6 @@ static NSInteger estimatedRowHeight = 44.0;
     [self presentViewController:helpViewController animated:YES completion:nil];
 }
 
--(void)sortButtonPressed:(UIBarButtonItem *)sortButton {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                   message:@"This is an alert."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

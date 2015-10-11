@@ -18,7 +18,6 @@
 
 - (IBAction)sortControlValueChanged:(UISegmentedControl *)sender;
 - (void)helpButtonPressed:(UIBarButtonItem *)helpButton;
-- (void)sortButtonPressed:(UIBarButtonItem *)sortButton;
 - (void)showShareSheetWithSourceRect:(CGRect)rect;
 
 @end
