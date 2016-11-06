@@ -195,4 +195,29 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     }
 }
 
+#pragma mark -  UIViewControllerPreviewingDelegate
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    //Create a detail view controller and set its properties
+    TitlesViewController *titlesVC = [self.storyboard instantiateViewControllerWithIdentifier:@"titlesViewController"];
+    
+    NSDictionary *emperor = [(EmperorCell *)cell emperor];
+    
+    detailVC.emperor = emperor;
+    
+    titlesVC.navigationItem.title = emperor[@"emperor_common_name"];
+    
+    previewingContext.sourceRect = cell.frame;
+    
+    return titlesVC;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    // Reuse the "Peek" view controller for presentation.
+    self.show(viewControllerToCommit, sender: self);
+}
+
 @end

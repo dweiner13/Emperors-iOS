@@ -10,7 +10,7 @@
 
 @class TitlesViewController;
 
-@interface EmperorsViewController : UITableViewController <UISearchResultsUpdating, UISearchBarDelegate>
+@interface EmperorsViewController : UITableViewController <UISearchResultsUpdating, UISearchBarDelegate, UIViewControllerPreviewingDelegate>
 
 @property (copy, nonatomic) NSArray *emperorsOriginalSort;
 
