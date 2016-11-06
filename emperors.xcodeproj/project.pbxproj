@@ -26,7 +26,7 @@
 		E093FC8C1A7E13FC00072A89 /* ModalWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E093FC8B1A7E13FC00072A89 /* ModalWebView.xib */; };
 		E0B233B11A6979B500052C19 /* NameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B233B01A6979B500052C19 /* NameCell.m */; };
 		E0B233B41A69982500052C19 /* SortCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B233B31A69982500052C19 /* SortCell.m */; };
-		E0D59EAE1BCB122A00282DEA /* EmperorShareProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */; settings = {ASSET_TAGS = (); }; };
+		E0D59EAE1BCB122A00282DEA /* EmperorShareProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */; };
 		E0D8A1231A6C53DF00F9FECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0D8A1211A6C53DF00F9FECB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -234,9 +234,11 @@
 					E01C89981A63152100946C7C = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 5TSNJUMDQY;
+						LastSwiftMigration = 0810;
 					};
 					E01C89B11A63152100946C7C = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0810;
 						TestTargetID = E01C89981A63152100946C7C;
 					};
 				};
@@ -451,6 +453,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "emperors/Emperors-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -468,6 +471,7 @@
 				PRODUCT_NAME = Emperors;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "emperors/Emperors-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -475,6 +479,7 @@
 		E01C89C01A63152100946C7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -487,13 +492,15 @@
 				INFOPLIST_FILE = emperorsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = emperorsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emperors.app/emperors";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emperors.app/Emperors";
 			};
 			name = Debug;
 		};
 		E01C89C11A63152100946C7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -502,7 +509,8 @@
 				INFOPLIST_FILE = emperorsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = emperorsTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/emperors.app/emperors";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Emperors.app/Emperors";
 			};
 			name = Release;
 		};

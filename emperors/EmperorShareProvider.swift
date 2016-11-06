@@ -18,12 +18,12 @@ class EmperorShareProvider: UIActivityItemProvider {
         super.init(placeholderItem: placeholderString);
     }
     
-    override func item() -> AnyObject {
-        if self.activityType == UIActivityTypeMail {
-            return self.mailHTMLString;
+    override var item : AnyObject {
+        if self.activityType == UIActivityType.mail {
+            return self.mailHTMLString as AnyObject;
         }
         else {
-            return self.placeholderItem!;
+            return self.placeholderItem! as AnyObject;
         }
     }
 }
