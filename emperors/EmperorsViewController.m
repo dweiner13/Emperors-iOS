@@ -62,8 +62,8 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     
     NSError *err;
     NSArray *emperors = [NSJSONSerialization JSONObjectWithData:jsonData
-                                               options:0
-                                                 error:&err];
+                                                        options:0
+                                                          error:&err];
     
     self.emperorsOriginalSort = emperors;
     
@@ -81,6 +81,8 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     
     // split view controller stuff
     self.titlesViewController = (TitlesViewController *) [[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    [self registerForPreviewingWithDelegate:self sourceView:self.view];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -206,7 +208,7 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     
     NSDictionary *emperor = [(EmperorCell *)cell emperor];
     
-    detailVC.emperor = emperor;
+    titlesVC.emperor = emperor;
     
     titlesVC.navigationItem.title = emperor[@"emperor_common_name"];
     
@@ -217,7 +219,7 @@ static NSString *cellIdentifier = @"EmperorNameCell";
 
 - (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
     // Reuse the "Peek" view controller for presentation.
-    self.show(viewControllerToCommit, sender: self);
+    [self showViewController:viewControllerToCommit sender:self];
 }
 
 @end
