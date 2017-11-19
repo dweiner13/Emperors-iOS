@@ -74,7 +74,12 @@ static NSString *cellIdentifier = @"EmperorNameCell";
     searchBar.scopeButtonTitles = @[@"Common name", @"Inscription"];
     [searchBar sizeToFit];
     searchBar.delegate = self;
-    self.tableView.tableHeaderView = searchBar;
+    if (@available(iOS 11.0, *)) {
+        self.navigationController.navigationBar.prefersLargeTitles = true;
+        self.navigationItem.searchController = self.searchController;
+    } else {
+        self.tableView.tableHeaderView = searchBar;
+    }
     self.searchController.searchResultsUpdater = self;
     searchBar.searchBarStyle = UISearchBarStyleDefault;
     self.searchController.dimsBackgroundDuringPresentation = NO;
