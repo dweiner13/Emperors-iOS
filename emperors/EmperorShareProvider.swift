@@ -12,7 +12,7 @@ class EmperorShareProvider: UIActivityItemProvider {
     
     let mailHTMLString: String
     
-    init(placeholderString: String, mailHTMLString: String) {
+    @objc init(placeholderString: String, mailHTMLString: String) {
         self.mailHTMLString = mailHTMLString;
         
         super.init(placeholderItem: placeholderString);
