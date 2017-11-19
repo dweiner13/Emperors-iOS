@@ -26,6 +26,10 @@
         self.allowLoadingInlineLinks = NO;
         self.allowScrolling = YES;
         self.title = title;
+        
+        if (@available(iOS 11.0, *)) {
+            self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
+        }
     }
     
     return self;
