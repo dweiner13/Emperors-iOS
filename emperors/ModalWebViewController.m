@@ -17,10 +17,8 @@
 
 @implementation ModalWebViewController
 
--(instancetype)initWithHTMLFileName:(NSString *)HTMLFileName title:(NSString *)title modalPresentationStyle:(UIModalPresentationStyle)modalPresentationStyle {
+-(instancetype)initWithHTMLFileName:(NSString *)HTMLFileName title:(NSString *)title {
     self = [super initWithNibName:@"ModalWebView" bundle:[NSBundle mainBundle]];
-    
-    self.modalPresentationStyle = modalPresentationStyle;
     
     if (self) {
         self.HTMLPath = [[NSBundle mainBundle] pathForResource:HTMLFileName
@@ -38,10 +36,9 @@
     // Do any additional setup after loading the view.
     
     self.navigationBar.items = @[self.navigationItem];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneButtonPressed:)];
     
-    self.webView.scrollView.contentInset = UIEdgeInsetsMake(64.0, 0.0, 0.0, 0.0);
-    self.webView.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(64.0, 0.0, 0.0, 0.0);
+    self.webView.scrollView.contentInset = UIEdgeInsetsMake(self.navigationBar.frame.size.height, 0.0, 0.0, 0.0);
+    self.webView.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(self.navigationBar.frame.size.height, 0.0, 0.0, 0.0);
     self.webView.delegate = self;
     
     self.webView.scrollView.scrollEnabled = self.allowScrolling;
@@ -73,10 +70,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)doneButtonPressed:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Web view delegate

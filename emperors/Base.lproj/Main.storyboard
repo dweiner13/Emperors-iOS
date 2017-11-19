@@ -247,7 +247,7 @@
                             <outlet property="delegate" destination="6hV-tm-RkF" id="ZFR-DF-41s"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qrP-P6-DPg"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="qrP-P6-DPg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TE8-zW-3zb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

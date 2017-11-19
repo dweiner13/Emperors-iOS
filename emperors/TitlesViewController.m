@@ -165,10 +165,9 @@ static NSInteger estimatedRowHeight = 44.0;
 
 - (void)helpButtonPressed:(UIBarButtonItem *)helpButton {
     ModalWebViewController *helpViewController = [[ModalWebViewController alloc] initWithHTMLFileName:@"help"
-                                                                                                title:@"Help"
-                                                                               modalPresentationStyle:UIModalPresentationPageSheet];
-    
-    [self presentViewController:helpViewController animated:YES completion:nil];
+                                                                                                title:@"Dating inscriptions"];
+
+    [self.navigationController showViewController:helpViewController sender:nil];
 }
 
 #pragma mark - Table view data source

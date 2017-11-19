@@ -16,6 +16,6 @@
 @property (nonatomic) BOOL allowScrolling;
 @property (nonatomic) BOOL allowLoadingInlineLinks;
 
--(instancetype)initWithHTMLFileName:(NSString *)HTMLFileName title:(NSString *)title modalPresentationStyle:(UIModalPresentationStyle)modalPresentationStyle;
+-(instancetype)initWithHTMLFileName:(NSString *)HTMLFileName title:(NSString *)title;
 
 @end

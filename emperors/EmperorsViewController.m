@@ -129,12 +129,9 @@ static NSString *cellIdentifier = @"EmperorNameCell";
 
 - (IBAction)aboutButtonPressed:(UIBarButtonItem *)sender {
     ModalWebViewController *aboutViewController = [[ModalWebViewController alloc] initWithHTMLFileName:@"about"
-                                                                                                 title:@"About"
-                                                                                modalPresentationStyle:UIModalPresentationFormSheet];
+                                                                                                 title:@"About"];
     
-    aboutViewController.allowScrolling = NO;
-    
-    [self presentViewController:aboutViewController animated:YES completion:nil];
+    [self.navigationController showViewController:aboutViewController sender:nil];
 }
 
 
