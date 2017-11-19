@@ -58,16 +58,6 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    if (self.view.traitCollection.userInterfaceIdiom==UIUserInterfaceIdiomPad) {
-        // on iPad the contentInset does not need to be adjusted for the statusbar
-        self.webView.scrollView.contentInset = UIEdgeInsetsMake(44.0, 0.0, 0.0, 0.0);
-        self.webView.scrollView.scrollIndicatorInsets = UIEdgeInsetsMake(44.0, 0.0, 0.0, 0.0);
-        
-        // on iPad the modal view will not have a status bar so don't extend the
-        // navigationBar behind it
-        self.navigationBarHeightConstraint.constant = 44.0;
-    }
-    
     [super viewDidAppear:animated];
 }
 
