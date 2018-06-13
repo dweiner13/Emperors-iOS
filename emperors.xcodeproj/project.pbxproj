@@ -52,7 +52,7 @@
 		E01C899E1A63152100946C7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E01C89A01A63152100946C7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E01C89A11A63152100946C7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E01C89AC1A63152100946C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E01C89AC1A63152100946C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		E01C89B21A63152100946C7C /* emperorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = emperorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01C89B71A63152100946C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E01C89B81A63152100946C7C /* emperorsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = emperorsTests.m; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		E0B233B31A69982500052C19 /* SortCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortCell.m; sourceTree = "<group>"; };
 		E0D59EAC1BCB122A00282DEA /* Emperors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Emperors-Bridging-Header.h"; sourceTree = "<group>"; };
 		E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmperorShareProvider.swift; sourceTree = "<group>"; };
-		E0D8A1221A6C53DF00F9FECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0D8A1221A6C53DF00F9FECB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +94,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E004579520D0A530005AFB15 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E01898841A631B6A00622CEB /* EmperorsViewController.h */,
+				E01898851A631B6A00622CEB /* EmperorsViewController.m */,
+				E0300C9E1A64749F008D5548 /* TitlesViewController.h */,
+				E0300C9F1A64749F008D5548 /* TitlesViewController.m */,
+				E093FC841A7DEDC100072A89 /* ModalWebViewController.h */,
+				E093FC851A7DEDC100072A89 /* ModalWebViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		E01C89901A63152100946C7C = {
 			isa = PBXGroup;
 			children = (
@@ -116,19 +129,15 @@
 		E01C899B1A63152100946C7C /* emperors */ = {
 			isa = PBXGroup;
 			children = (
-				E01898841A631B6A00622CEB /* EmperorsViewController.h */,
-				E01898851A631B6A00622CEB /* EmperorsViewController.m */,
-				E0300C9E1A64749F008D5548 /* TitlesViewController.h */,
-				E0300C9F1A64749F008D5548 /* TitlesViewController.m */,
-				E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */,
-				E0750CEF1A64652000145B79 /* Interface Files */,
-				E01C899C1A63152100946C7C /* Supporting Files */,
-				E00A396E1A7EB0E400663C9F /* Images.xcassets */,
-				E093FC841A7DEDC100072A89 /* ModalWebViewController.h */,
-				E093FC851A7DEDC100072A89 /* ModalWebViewController.m */,
 				E01C89A01A63152100946C7C /* AppDelegate.h */,
 				E01C89A11A63152100946C7C /* AppDelegate.m */,
+				E0D59EAD1BCB122A00282DEA /* EmperorShareProvider.swift */,
+				E00A396E1A7EB0E400663C9F /* Images.xcassets */,
 				E0D59EAC1BCB122A00282DEA /* Emperors-Bridging-Header.h */,
+				E01C899D1A63152100946C7C /* Info.plist */,
+				E004579520D0A530005AFB15 /* View Controllers */,
+				E0750CEF1A64652000145B79 /* Interface Files */,
+				E01C899C1A63152100946C7C /* Supporting Files */,
 			);
 			path = emperors;
 			sourceTree = "<group>";
@@ -141,11 +150,10 @@
 				E0002FD91A797CC3001C5453 /* help.html */,
 				E0300CB91A64D8BF008D5548 /* dates.json */,
 				E01898871A631DD700622CEB /* emperors.json */,
-				E01C899D1A63152100946C7C /* Info.plist */,
 				E01C899E1A63152100946C7C /* main.m */,
 				E093FC891A7DFB8200072A89 /* about.html */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E01C89B51A63152100946C7C /* emperorsTests */ = {
@@ -168,8 +176,8 @@
 		E0750CEF1A64652000145B79 /* Interface Files */ = {
 			isa = PBXGroup;
 			children = (
-				E093FC8B1A7E13FC00072A89 /* ModalWebView.xib */,
 				E0D8A1211A6C53DF00F9FECB /* Main.storyboard */,
+				E093FC8B1A7E13FC00072A89 /* ModalWebView.xib */,
 				E07360681A799ED500A3F651 /* DefaultTitlesView.xib */,
 				E0B233B21A69982500052C19 /* SortCell.h */,
 				E0B233B31A69982500052C19 /* SortCell.m */,
@@ -179,7 +187,7 @@
 				E0B233B01A6979B500052C19 /* NameCell.m */,
 				E01C89AB1A63152100946C7C /* LaunchScreen.xib */,
 			);
-			name = "Interface Files";
+			path = "Interface Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,8 +199,8 @@
 			buildPhases = (
 				E01C89951A63152100946C7C /* Sources */,
 				E01C89961A63152100946C7C /* Frameworks */,
-				E09F265C1A96602200234624 /* ShellScript */,
 				E01C89971A63152100946C7C /* Resources */,
+				E09F265C1A96602200234624 /* ShellScript */,
 			);
 			buildRules = (
 			);

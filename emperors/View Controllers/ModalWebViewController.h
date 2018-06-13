@@ -1,5 +1,5 @@
 //
-//  TitlesHelpViewController.h
+//  ModalWebViewController.h
 //  emperors
 //
 //  Created by Daniel A. Weiner on 1/24/15.

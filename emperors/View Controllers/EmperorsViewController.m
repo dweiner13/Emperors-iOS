@@ -1,5 +1,5 @@
 //
-//  RootTableViewController.m
+//  EmperorsViewController.m
 //  emperors
 //
 //  Created by Daniel A. Weiner on 1/11/15.
@@ -7,7 +7,6 @@
 //
 
 #import "EmperorsViewController.h"
-#import "EmperorResultsController.h"
 #import "EmperorCell.h"
 #import "TitlesViewController.h"
 #import "ModalWebViewController.h"

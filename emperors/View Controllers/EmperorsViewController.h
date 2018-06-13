@@ -1,5 +1,5 @@
 //
-//  RootTableViewController.h
+//  EmperorsViewController.h
 //  emperors
 //
 //  Created by Daniel A. Weiner on 1/11/15.
