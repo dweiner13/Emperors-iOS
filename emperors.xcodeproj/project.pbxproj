@@ -43,6 +43,7 @@
 /* Begin PBXFileReference section */
 		E0002FD91A797CC3001C5453 /* help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = help.html; sourceTree = "<group>"; };
 		E0002FDF1A79813B001C5453 /* example-inscription.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "example-inscription.jpg"; sourceTree = "<group>"; };
+		E004579920D0A8B5005AFB15 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; wrapsLines = 1; };
 		E00A396E1A7EB0E400663C9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E01898841A631B6A00622CEB /* EmperorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmperorsViewController.h; sourceTree = "<group>"; };
 		E01898851A631B6A00622CEB /* EmperorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmperorsViewController.m; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		E01C89901A63152100946C7C = {
 			isa = PBXGroup;
 			children = (
+				E004579920D0A8B5005AFB15 /* README.md */,
 				E01C899B1A63152100946C7C /* emperors */,
 				E01C89B51A63152100946C7C /* emperorsTests */,
 				E01C899A1A63152100946C7C /* Products */,
